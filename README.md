@@ -25,53 +25,6 @@ It's also based on [Amichai Mantinband's project](https://github.com/amantinband
 
 Dependencies between layers are as follows:
 
-```mermaid
-graph TD
-
-    subgraph Presentation[Presentation Layer]
-        direction TB
-        EatTogether.Contracts
-        EatTogether.WebApi
-    end
-
-    subgraph Infrastructure[Infrastructure Layer]
-        EatTogether.Infrastructure
-    end
-
-    subgraph Application[Application Layer]
-        EatTogether.Application
-    end
-
-    subgraph Domain[Domain Layer]
-        EatTogether.Domain
-    end
-
-    Presentation --> Application
-    Infrastructure --> Application
-    Application --> Domain
-```
-
-Temporary diagram below, since the one above is not working on github (despite working on mermaid.live)
-
-```mermaid
-graph TD
-
-    subgraph Domain[Domain Layer]
-        EatTogether.Domain
-    end
-
-    subgraph Application[Application Layer]
-        EatTogether.Application --> EatTogether.Domain
-    end
-
-    subgraph Presentation[Presentation Layer]
-        EatTogether.WebApi --> EatTogether.Application
-        EatTogether.Contracts --> EatTogether.Application
-    end
-
-    subgraph Infrastructure[Infrastructure Layer]
-        EatTogether.Infrastructure --> EatTogether.Application
-    end
-```
+![dependency diagram svg](ReadmeAssets/DependencyDiagram.svg)
 
 *note: EatTogether.WebApi depends on EatTogether.Infrastructure, but only for dependency injection in Program.cs*
