@@ -49,4 +49,27 @@ graph TD
     Application --> Domain
 ```
 
+Temporary diagram below, since the one above is not working on github (despite working on mermaid.live)
+
+```mermaid
+graph TD
+
+    subgraph Domain[Domain Layer]
+        EatTogether.Domain
+    end
+
+    subgraph Application[Application Layer]
+        EatTogether.Application --> EatTogether.Domain
+    end
+
+    subgraph Presentation[Presentation Layer]
+        EatTogether.WebApi --> EatTogether.Application
+        EatTogether.Contracts --> EatTogether.Application
+    end
+
+    subgraph Infrastructure[Infrastructure Layer]
+        EatTogether.Infrastructure --> EatTogether.Application
+    end
+```
+
 *note: EatTogether.Infrastructure depends on EatTogether.WebApi, but only for dependency injection in Program.cs*
