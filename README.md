@@ -2,6 +2,8 @@
 
 RESTful web API following [clean architecture](https://jasontaylor.dev/clean-architecture-getting-started/), that allows users to share a meal with others.
 
+*note: app is still WIP*
+
 ## How to run
 
 ### Prerequisites
@@ -72,4 +74,4 @@ graph TD
     end
 ```
 
-*note: EatTogether.Infrastructure depends on EatTogether.WebApi, but only for dependency injection in Program.cs*
+*note: EatTogether.WebApi depends on EatTogether.Infrastructure, but only for dependency injection in Program.cs*
