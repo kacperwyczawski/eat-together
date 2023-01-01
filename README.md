@@ -26,7 +26,7 @@ Dependencies between layers are as follows:
 ```mermaid
 graph TD
 
-    subgraph Presentation[Presentation Layer]
+    subgraph A[Presentation Layer]
         direction TB
         EatTogether.Contracts
         EatTogether.WebApi
@@ -44,7 +44,7 @@ graph TD
         EatTogether.Domain
     end
 
-    Presentation --> Application
+    A --> Application
     Infrastructure --> Application
     Application --> Domain
 ```
