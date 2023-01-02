@@ -29,7 +29,8 @@ Dependencies between layers are as follows:
 flowchart TD
 
     subgraph Presentation[Presentation Layer]
-        EatTogether.WebApi --> EatTogether.Contracts
+        EatTogether.WebApi
+        EatTogether.Contracts
     end
 
     subgraph Infrastructure[Infrastructure Layer]
