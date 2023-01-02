@@ -1,4 +1,4 @@
-namespace WebApi;
+namespace EatTogether.WebApi;
 
 public class WeatherForecast
 {
