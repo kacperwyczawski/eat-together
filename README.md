@@ -25,6 +25,28 @@ It's also based on [Amichai Mantinband's project](https://github.com/amantinband
 
 Dependencies between layers are as follows:
 
-![dependency diagram svg](ReadmeAssets/DependencyDiagram.svg)
+```mermaid
+flowchart TD
+
+    subgraph Presentation[Presentation Layer]
+        EatTogether.WebApi --> EatTogether.Contracts
+    end
+
+    subgraph Infrastructure[Infrastructure Layer]
+        EatTogether.Infrastructure
+    end
+
+    subgraph Application[Application Layer]
+        EatTogether.Application
+    end
+
+    subgraph Domain[Domain Layer]
+        EatTogether.Domain
+    end
+
+    Presentation --> Application
+    Infrastructure --> Application
+    Application --> Domain
+```
 
 *note: EatTogether.WebApi depends on EatTogether.Infrastructure, but only for dependency injection in Program.cs*
