@@ -17,4 +17,8 @@
       <ProjectReference Include="..\EatTogether.Infrastructure\EatTogether.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers" />
+    </ItemGroup>
+
 </Project>
