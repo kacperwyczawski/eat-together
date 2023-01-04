@@ -1,4 +1,6 @@
+using EatTogether.Application.Common.Interfaces;
 using EatTogether.Application.Services.Authentication;
+using EatTogether.Infrastructure.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
 var app = builder.Build();
 
