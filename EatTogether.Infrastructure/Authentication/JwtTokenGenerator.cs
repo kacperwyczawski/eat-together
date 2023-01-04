@@ -23,7 +23,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 
         var securityToken = new JwtSecurityToken(
             issuer: "EatTogether",
-            expires: DateTime.UtcNow.AddDays(1),
+            expires: DateTime.UtcNow.AddHours(1),
             signingCredentials: signingCredentials,
             claims: claims);
         
