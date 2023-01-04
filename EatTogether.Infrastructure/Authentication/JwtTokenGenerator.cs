@@ -11,7 +11,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
     {
         var signingKey = new SymmetricSecurityKey("it's:very:secret"u8.ToArray());
         
-        var singingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+        var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
         {
@@ -24,7 +24,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         var securityToken = new JwtSecurityToken(
             issuer: "EatTogether",
             expires: DateTime.Now.AddDays(1),
-            signingCredentials: singingCredentials,
+            signingCredentials: signingCredentials,
             claims: claims);
         
         return new JwtSecurityTokenHandler().WriteToken(securityToken);
