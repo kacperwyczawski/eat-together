@@ -10,7 +10,7 @@ RESTful web API following [clean architecture](https://jasontaylor.dev/clean-arc
 
 - .NET 7 SDK
     - Windows: `winget install Microsoft.DotNet.SDK.7`
-    - MacOS / Linux: [link](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+    - MacOS, Linux or other installation methods: [link](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 
 ### Run via CLI
 
