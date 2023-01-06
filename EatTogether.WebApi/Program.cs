@@ -7,8 +7,7 @@ using EatTogether.WebApi.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(options =>
-    options.Filters.Add<ErrorHandlingFilterAttribute>());
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,6 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
