@@ -4,9 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EatTogether.WebApi.Controllers;
 
-[ApiController]
 [Route("auth")]
-public class AuthenticationController : ControllerBase
+public class AuthenticationController : ApiController
 {
     private readonly IAuthenticationService _authenticationService;
 
@@ -15,39 +14,40 @@ public class AuthenticationController : ControllerBase
         _authenticationService = authenticationService;
     }
 
-    [HttpPost("login")]
-    public IActionResult Login(LoginRequest request)
-    {
-        var result = _authenticationService.Login(
-            request.Email,
-            request.Password);
-
-        var response = new AuthenticationResponse(
-                result.User.Id,
-                result.User.FirstName,
-                result.User.LastName, 
-                result.User.Email, 
-                result.Token);
-
-        return Ok(response);
-    }
-
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest request)
     {
-        var result = _authenticationService.Register(
+        var maybeResult = _authenticationService.Register(
             request.FirstName,
             request.LastName,
             request.Email,
             request.Password);
 
+        return maybeResult.Match(
+            onValue: result => Ok(MapToResponse(result)),
+            onError: Problem);
+    }
+
+    [HttpPost("login")]
+    public IActionResult Login(LoginRequest request)
+    {
+        var maybeResult = _authenticationService.Login(
+            request.Email,
+            request.Password);
+        
+        return maybeResult.Match(
+            onValue: result => Ok(MapToResponse(result)),
+            onError: Problem);
+    }
+
+    private static AuthenticationResponse MapToResponse(AuthenticationResult result)
+    {
         var response = new AuthenticationResponse(
             result.User.Id,
             result.User.FirstName,
             result.User.LastName,
             result.User.Email,
             result.Token);
-
-        return Ok(response);
+        return response;
     }
 }
