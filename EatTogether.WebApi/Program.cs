@@ -1,9 +1,9 @@
-using EatTogether.Application.Common.Interfaces;
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Application.Services.Authentication;
 using EatTogether.Infrastructure.Authentication;
 using EatTogether.Infrastructure.Persistent;
+using EatTogether.WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
