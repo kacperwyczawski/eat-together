@@ -1,5 +1,4 @@
-﻿using EatTogether.Application.Common.Interfaces;
-using EatTogether.Application.Common.Interfaces.Authentication;
+﻿using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Domain.Entities;
 

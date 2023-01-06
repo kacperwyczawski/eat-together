@@ -3,7 +3,6 @@ using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Application.Services.Authentication;
 using EatTogether.Infrastructure.Authentication;
 using EatTogether.Infrastructure.Persistent;
-using EatTogether.WebApi.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
