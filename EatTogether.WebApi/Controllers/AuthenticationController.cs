@@ -1,5 +1,6 @@
 ﻿using EatTogether.Application.Services.Authentication;
 using EatTogether.Contracts.Authentication;
+using EatTogether.WebApi.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EatTogether.WebApi.Controllers;
