@@ -1,5 +1,5 @@
 ﻿using EatTogether.Domain.Entities;
 
-namespace EatTogether.Application.Services.Authentication.Common;
+namespace EatTogether.Application.Authentication.Common;
 
 public record AuthenticationResult(User User, string Token);

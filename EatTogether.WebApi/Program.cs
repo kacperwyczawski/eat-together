@@ -1,10 +1,9 @@
+using System.Reflection;
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
-using EatTogether.Application.Services.Authentication;
-using EatTogether.Application.Services.Authentication.Commands;
-using EatTogether.Application.Services.Authentication.Queries;
 using EatTogether.Infrastructure.Authentication;
 using EatTogether.Infrastructure.Persistent;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-builder.Services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
-builder.Services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

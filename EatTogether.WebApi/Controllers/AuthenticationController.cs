@@ -1,8 +1,8 @@
-﻿using EatTogether.Application.Services.Authentication;
-using EatTogether.Application.Services.Authentication.Commands;
-using EatTogether.Application.Services.Authentication.Common;
-using EatTogether.Application.Services.Authentication.Queries;
+﻿using EatTogether.Application.Authentication.Commands.Register;
+using EatTogether.Application.Authentication.Common;
+using EatTogether.Application.Authentication.Queries.Login;
 using EatTogether.Contracts.Authentication;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EatTogether.WebApi.Controllers;
@@ -10,25 +10,18 @@ namespace EatTogether.WebApi.Controllers;
 [Route("auth")]
 public class AuthenticationController : ApiController
 {
-    private readonly IAuthenticationCommandService _authenticationCommandService;
-    private readonly IAuthenticationQueryService _authenticationQueryService;
+    private readonly ISender _mediator;
 
-    public AuthenticationController(
-        IAuthenticationQueryService authenticationQueryService,
-        IAuthenticationCommandService authenticationCommandService)
+    public AuthenticationController(ISender mediator)
     {
-        _authenticationQueryService = authenticationQueryService;
-        _authenticationCommandService = authenticationCommandService;
+        _mediator = mediator;
     }
 
     [HttpPost("register")]
-    public IActionResult Register(RegisterRequest request)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var maybeResult = _authenticationCommandService.Register(
-            request.FirstName,
-            request.LastName,
-            request.Email,
-            request.Password);
+        var command = new RegisterCommand(request.Email, request.Password, request.FirstName, request.LastName);
+        var maybeResult = await _mediator.Send(command);
 
         return maybeResult.Match(
             onValue: result => Ok(MapToResponse(result)),
@@ -36,11 +29,10 @@ public class AuthenticationController : ApiController
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
-        var maybeResult = _authenticationQueryService.Login(
-            request.Email,
-            request.Password);
+        var query = new LoginQuery(request.Email, request.Password);
+        var maybeResult = await _mediator.Send(query);
 
         return maybeResult.Match(
             onValue: result => Ok(MapToResponse(result)),
