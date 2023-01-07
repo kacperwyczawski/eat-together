@@ -1,6 +1,8 @@
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Application.Services.Authentication;
+using EatTogether.Application.Services.Authentication.Commands;
+using EatTogether.Application.Services.Authentication.Queries;
 using EatTogether.Infrastructure.Authentication;
 using EatTogether.Infrastructure.Persistent;
 
@@ -11,7 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
+builder.Services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 

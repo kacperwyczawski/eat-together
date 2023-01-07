@@ -1,4 +1,7 @@
 ﻿using EatTogether.Application.Services.Authentication;
+using EatTogether.Application.Services.Authentication.Commands;
+using EatTogether.Application.Services.Authentication.Common;
+using EatTogether.Application.Services.Authentication.Queries;
 using EatTogether.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,17 +10,21 @@ namespace EatTogether.WebApi.Controllers;
 [Route("auth")]
 public class AuthenticationController : ApiController
 {
-    private readonly IAuthenticationService _authenticationService;
+    private readonly IAuthenticationCommandService _authenticationCommandService;
+    private readonly IAuthenticationQueryService _authenticationQueryService;
 
-    public AuthenticationController(IAuthenticationService authenticationService)
+    public AuthenticationController(
+        IAuthenticationQueryService authenticationQueryService,
+        IAuthenticationCommandService authenticationCommandService)
     {
-        _authenticationService = authenticationService;
+        _authenticationQueryService = authenticationQueryService;
+        _authenticationCommandService = authenticationCommandService;
     }
 
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest request)
     {
-        var maybeResult = _authenticationService.Register(
+        var maybeResult = _authenticationCommandService.Register(
             request.FirstName,
             request.LastName,
             request.Email,
@@ -31,10 +38,10 @@ public class AuthenticationController : ApiController
     [HttpPost("login")]
     public IActionResult Login(LoginRequest request)
     {
-        var maybeResult = _authenticationService.Login(
+        var maybeResult = _authenticationQueryService.Login(
             request.Email,
             request.Password);
-        
+
         return maybeResult.Match(
             onValue: result => Ok(MapToResponse(result)),
             onError: Problem);
