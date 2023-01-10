@@ -32,6 +32,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
 
         var errors = validationResult.Errors
             .Select(error => Error.Validation(
+                code: error.PropertyName,
                 description: error.ErrorMessage))
             .ToList();
 
