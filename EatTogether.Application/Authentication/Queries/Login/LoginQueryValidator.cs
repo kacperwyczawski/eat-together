@@ -1,5 +1,4 @@
-﻿using EatTogether.Application.Authentication.Commands.Register;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace EatTogether.Application.Authentication.Queries.Login;
 

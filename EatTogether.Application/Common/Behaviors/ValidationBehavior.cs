@@ -1,6 +1,4 @@
-﻿using EatTogether.Application.Authentication.Commands.Register;
-using EatTogether.Application.Authentication.Common;
-using ErrorOr;
+﻿using ErrorOr;
 using FluentValidation;
 using MediatR;
 
