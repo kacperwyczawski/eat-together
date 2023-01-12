@@ -34,6 +34,6 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
                 description: error.ErrorMessage))
             .ToList();
 
-        return (dynamic)errors; // compiler doesn't know that there is explicit conversion from List<Error> to IErrorOr
+        return (dynamic)errors; // compiler doesn't know that there is implicit conversion from List<Error> to IErrorOr
     }
 }
