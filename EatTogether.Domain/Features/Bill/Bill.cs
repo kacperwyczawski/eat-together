@@ -1,4 +1,4 @@
-﻿using EatTogether.Domain.Features.Bill.ValueObjects;
+﻿using EatTogether.Domain.Shared.ValueObjects;
 
 namespace EatTogether.Domain.Features.Bill;
 

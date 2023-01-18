@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.Bill.ValueObjects;
+﻿namespace EatTogether.Domain.Shared.ValueObjects;
 
 public class Price : ValueObject
 {
