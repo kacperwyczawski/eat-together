@@ -2,7 +2,7 @@
 
 namespace EatTogether.Domain.Features.Menu;
 
-public sealed class Menu : AggregateRoot<Guid>
+public sealed class Menu : AggregateRoot
 {
     public string Name { get; }
     public string Description { get; }
