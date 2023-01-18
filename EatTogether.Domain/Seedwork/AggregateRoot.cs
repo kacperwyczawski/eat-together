@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Models;
+﻿namespace EatTogether.Domain.Seedwork;
 
 public class AggregateRoot<TId> : Entity<TId>
     where TId : notnull

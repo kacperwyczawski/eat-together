@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Models;
+﻿namespace EatTogether.Domain.Seedwork;
 
 public abstract class Entity<TId> : IEquatable<Entity<TId>>
     where TId : notnull
