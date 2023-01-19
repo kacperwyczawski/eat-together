@@ -1,4 +1,4 @@
-﻿using EatTogether.Domain.Entities;
+﻿using EatTogether.Domain.Features.User;
 
 namespace EatTogether.Application.Authentication.Common;
 

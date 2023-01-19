@@ -1,8 +1,8 @@
 ﻿using EatTogether.Application.Authentication.Common;
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
-using EatTogether.Domain.Entities;
 using EatTogether.Domain.Errors;
+using EatTogether.Domain.Features.User;
 using ErrorOr;
 using MediatR;
 
@@ -24,7 +24,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
         if (_userRepository.GetByEmail(command.Email) is not null)
             return Task.FromResult<ErrorOr<AuthenticationResult>>(Errors.User.DuplicateEmail);
         
-        var user = new User(command.FirstName, command.LastName, command.Email, command.Password);
+        var user = new User(Guid.NewGuid(), command.FirstName, command.LastName, command.Email, command.Password);
 
         _userRepository.Add(user);
 
