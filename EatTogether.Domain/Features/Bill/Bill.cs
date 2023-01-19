@@ -2,7 +2,7 @@
 
 namespace EatTogether.Domain.Features.Bill;
 
-public class Bill : AggregateRoot
+public sealed class Bill : AggregateRoot
 {
     public Price Price { get; }
     
