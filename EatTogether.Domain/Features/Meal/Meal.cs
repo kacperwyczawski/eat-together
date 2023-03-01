@@ -4,6 +4,9 @@ namespace EatTogether.Domain.Features.Meal;
 
 public class Meal : AggregateRoot
 {
+    public readonly Guid HostId;
+    public readonly Guid MenuId;
+
     public string Name { get; }
     public string Description { get; }
     public DateTime Start { get; }
@@ -12,8 +15,9 @@ public class Meal : AggregateRoot
     public Price Price { get; }
     public string ImageUrl { get; }
 
-    protected Meal(Guid id, string name, string description, DateTime start, DateTime end, int maxGuests,
-        Price price, string imageUrl) : base(id)
+    public Meal(Guid id, string name, string description, DateTime start, DateTime end, int maxGuests,
+        Price price, string imageUrl, DateTime createdAt, DateTime updatedAt, Guid hostId, Guid menuId) : base(id,
+        createdAt, updatedAt)
     {
         Name = name;
         Description = description;
@@ -22,5 +26,7 @@ public class Meal : AggregateRoot
         MaxGuests = maxGuests;
         Price = price;
         ImageUrl = imageUrl;
+        HostId = hostId;
+        MenuId = menuId;
     }
 }
