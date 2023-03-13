@@ -1,6 +1,6 @@
-﻿using EatTogether.Application.Authentication.Commands.Register;
-using EatTogether.Application.Authentication.Queries.Login;
-using EatTogether.Contracts.Authentication;
+﻿using EatTogether.Application.AuthenticationFeature.Commands.Register;
+using EatTogether.Application.AuthenticationFeature.Queries.Login;
+using EatTogether.Contracts.AuthenticationContracts;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

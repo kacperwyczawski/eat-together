@@ -1,8 +1,8 @@
-﻿using EatTogether.Application.Authentication.Common;
+﻿using EatTogether.Application.AuthenticationFeature.Common;
 using ErrorOr;
 using MediatR;
 
-namespace EatTogether.Application.Authentication.Queries.Login;
+namespace EatTogether.Application.AuthenticationFeature.Queries.Login;
 
 public record LoginQuery(
     string Email,

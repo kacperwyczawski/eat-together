@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace EatTogether.Application.Authentication.Queries.Login;
+namespace EatTogether.Application.AuthenticationFeature.Queries.Login;
 
 public class LoginQueryValidator : AbstractValidator<LoginQuery>
 {

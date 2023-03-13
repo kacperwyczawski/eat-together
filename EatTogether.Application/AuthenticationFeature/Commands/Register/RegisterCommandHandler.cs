@@ -1,4 +1,4 @@
-﻿using EatTogether.Application.Authentication.Common;
+﻿using EatTogether.Application.AuthenticationFeature.Common;
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Domain.Errors;
@@ -6,7 +6,7 @@ using EatTogether.Domain.Features.UserAggregate;
 using ErrorOr;
 using MediatR;
 
-namespace EatTogether.Application.Authentication.Commands.Register;
+namespace EatTogether.Application.AuthenticationFeature.Commands.Register;
 
 public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
 {

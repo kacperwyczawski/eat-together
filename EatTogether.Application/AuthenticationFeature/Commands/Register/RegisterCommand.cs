@@ -1,8 +1,8 @@
-﻿using EatTogether.Application.Authentication.Common;
+﻿using EatTogether.Application.AuthenticationFeature.Common;
 using ErrorOr;
 using MediatR;
 
-namespace EatTogether.Application.Authentication.Commands.Register;
+namespace EatTogether.Application.AuthenticationFeature.Commands.Register;
 
 public record RegisterCommand(
     string Email, 

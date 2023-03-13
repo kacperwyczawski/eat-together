@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace EatTogether.Application.Authentication.Commands.Register;
+namespace EatTogether.Application.AuthenticationFeature.Commands.Register;
 
 public class RegisterCommandValidator : AbstractValidator<RegisterCommand>
 {

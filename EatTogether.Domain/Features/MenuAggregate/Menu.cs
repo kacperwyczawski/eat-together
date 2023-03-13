@@ -17,15 +17,15 @@ public sealed class Menu : AggregateRoot
 
     public Rating? AverageRating { get; }
 
-    private readonly List<MenuSection> _sections = new();
+    private readonly List<MenuSection> _sections;
 
-    public Menu(string name, string description, Guid hostId,
-        Rating? averageRating = null)
+    public Menu(string name, string description, Guid hostId, List<MenuSection> sections, Rating? averageRating = null)
     {
         Name = name;
         Description = description;
         AverageRating = averageRating;
         HostId = hostId;
+        _sections = sections;
     }
 
     public IReadOnlyList<MenuSection> Sections => _sections.AsReadOnly();

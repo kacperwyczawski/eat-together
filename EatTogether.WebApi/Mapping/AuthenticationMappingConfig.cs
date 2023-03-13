@@ -1,5 +1,5 @@
-﻿using EatTogether.Application.Authentication.Common;
-using EatTogether.Contracts.Authentication;
+﻿using EatTogether.Application.AuthenticationFeature.Common;
+using EatTogether.Contracts.AuthenticationContracts;
 using Mapster;
 
 namespace EatTogether.WebApi.Mapping;

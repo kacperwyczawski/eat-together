@@ -1,11 +1,11 @@
-﻿using EatTogether.Application.Authentication.Common;
+﻿using EatTogether.Application.AuthenticationFeature.Common;
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
-using ErrorOr;
 using EatTogether.Domain.Errors;
+using ErrorOr;
 using MediatR;
 
-namespace EatTogether.Application.Authentication.Queries.Login;
+namespace EatTogether.Application.AuthenticationFeature.Queries.Login;
 
 public class LoginQueryHandler : IRequestHandler<LoginQuery, ErrorOr<AuthenticationResult>>
 {
