@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.Menu.Entities;
+﻿namespace EatTogether.Domain.Features.MenuAggregate.Entities;
 
 public sealed class MenuSection : Entity
 {

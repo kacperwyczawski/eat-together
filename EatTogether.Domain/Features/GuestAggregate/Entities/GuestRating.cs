@@ -1,6 +1,6 @@
 ﻿using EatTogether.Domain.Shared.ValueObjects;
 
-namespace EatTogether.Domain.Features.Guest.Entities;
+namespace EatTogether.Domain.Features.GuestAggregate.Entities;
 
 public class GuestRating : Entity
 {

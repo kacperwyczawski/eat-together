@@ -1,4 +1,4 @@
-﻿using EatTogether.Domain.Features.User;
+﻿using EatTogether.Domain.Features.UserAggregate;
 
 namespace EatTogether.Application.Common.Interfaces.Authentication;
 

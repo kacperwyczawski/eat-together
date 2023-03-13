@@ -1,8 +1,7 @@
-﻿using EatTogether.Domain.Features.Guest.Entities;
-using EatTogether.Domain.Features.Menu.Entities;
+﻿using EatTogether.Domain.Features.MenuAggregate.Entities;
 using EatTogether.Domain.Shared.ValueObjects;
 
-namespace EatTogether.Domain.Features.Menu;
+namespace EatTogether.Domain.Features.MenuAggregate;
 
 public sealed class Menu : AggregateRoot
 {

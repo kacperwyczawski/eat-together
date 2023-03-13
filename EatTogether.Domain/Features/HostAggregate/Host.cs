@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.Host;
+﻿namespace EatTogether.Domain.Features.HostAggregate;
 
 public sealed class Host : AggregateRoot
 {

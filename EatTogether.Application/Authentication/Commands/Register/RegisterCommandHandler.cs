@@ -2,7 +2,7 @@
 using EatTogether.Application.Common.Interfaces.Authentication;
 using EatTogether.Application.Common.Interfaces.Persistence;
 using EatTogether.Domain.Errors;
-using EatTogether.Domain.Features.User;
+using EatTogether.Domain.Features.UserAggregate;
 using ErrorOr;
 using MediatR;
 

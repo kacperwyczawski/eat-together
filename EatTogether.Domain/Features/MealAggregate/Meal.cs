@@ -1,6 +1,6 @@
 ﻿using EatTogether.Domain.Shared.ValueObjects;
 
-namespace EatTogether.Domain.Features.Meal;
+namespace EatTogether.Domain.Features.MealAggregate;
 
 public class Meal : AggregateRoot
 {

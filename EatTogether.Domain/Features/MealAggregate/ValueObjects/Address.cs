@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.Meal.ValueObjects;
+﻿namespace EatTogether.Domain.Features.MealAggregate.ValueObjects;
 
 public class Address : ValueObject
 {

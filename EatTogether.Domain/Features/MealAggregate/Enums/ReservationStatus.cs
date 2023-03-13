@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.Meal.Enums;
+﻿namespace EatTogether.Domain.Features.MealAggregate.Enums;
 
 public enum ReservationStatus
 {

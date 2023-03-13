@@ -1,6 +1,6 @@
 ﻿using EatTogether.Domain.Shared.ValueObjects;
 
-namespace EatTogether.Domain.Features.Bill;
+namespace EatTogether.Domain.Features.BillAggregate;
 
 public sealed class Bill : AggregateRoot
 {

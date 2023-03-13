@@ -1,4 +1,4 @@
-﻿namespace EatTogether.Domain.Features.User;
+﻿namespace EatTogether.Domain.Features.UserAggregate;
 
 public sealed class User : AggregateRoot
 {

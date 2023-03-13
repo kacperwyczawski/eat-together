@@ -1,6 +1,6 @@
-﻿using EatTogether.Domain.Features.Meal.Enums;
+﻿using EatTogether.Domain.Features.MealAggregate.Enums;
 
-namespace EatTogether.Domain.Features.Meal.Entities;
+namespace EatTogether.Domain.Features.MealAggregate.Entities;
 
 public class Reservation : Entity
 {

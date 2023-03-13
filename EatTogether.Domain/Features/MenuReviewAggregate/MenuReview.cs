@@ -1,6 +1,6 @@
 ﻿using EatTogether.Domain.Shared.ValueObjects;
 
-namespace EatTogether.Domain.Features.MenuReview;
+namespace EatTogether.Domain.Features.MenuReviewAggregate;
 
 public sealed class MenuReview : AggregateRoot
 {

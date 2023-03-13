@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 using EatTogether.Application.Common.Interfaces.Authentication;
-using EatTogether.Domain.Features.User;
+using EatTogether.Domain.Features.UserAggregate;
 
 namespace EatTogether.Infrastructure.Authentication;
 

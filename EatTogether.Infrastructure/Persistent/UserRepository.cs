@@ -1,5 +1,5 @@
 ﻿using EatTogether.Application.Common.Interfaces.Persistence;
-using EatTogether.Domain.Features.User;
+using EatTogether.Domain.Features.UserAggregate;
 
 namespace EatTogether.Infrastructure.Persistent;
 

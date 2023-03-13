@@ -1,6 +1,6 @@
-﻿using EatTogether.Domain.Features.Guest.Entities;
+﻿using EatTogether.Domain.Features.GuestAggregate.Entities;
 
-namespace EatTogether.Domain.Features.Guest;
+namespace EatTogether.Domain.Features.GuestAggregate;
 
 public sealed class Guest : AggregateRoot
 {
