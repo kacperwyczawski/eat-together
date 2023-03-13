@@ -7,7 +7,7 @@ public class Reservation : Entity
     public int GuestCount { get; }
     public ReservationStatus Status { get; }
     
-    public Reservation(Guid id, ReservationStatus status, int guestCount) : base(id)
+    public Reservation(ReservationStatus status, int guestCount)
     {
         Status = status;
         GuestCount = guestCount;

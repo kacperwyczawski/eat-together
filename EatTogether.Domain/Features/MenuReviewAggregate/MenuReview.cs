@@ -12,8 +12,8 @@ public sealed class MenuReview : AggregateRoot
     public Rating Rating { get; }
     public string Comment { get; }
 
-    public MenuReview(Guid id, Rating rating, string comment, DateTime createdAt, DateTime updatedAt, Guid hostId,
-        Guid menuId, Guid guestId, Guid mealId) : base(id, createdAt, updatedAt)
+    public MenuReview(Rating rating, string comment, Guid hostId,
+        Guid menuId, Guid guestId, Guid mealId)
     {
         Rating = rating;
         Comment = comment;

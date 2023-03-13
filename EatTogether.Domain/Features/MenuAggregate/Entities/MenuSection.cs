@@ -6,7 +6,7 @@ public sealed class MenuSection : Entity
     public string Description { get; }
     private readonly List<MenuItem> _items = new ();
 
-    public MenuSection(Guid id, string name, string description) : base(id)
+    public MenuSection(string name, string description)
     {
         Description = description;
         Name = name;

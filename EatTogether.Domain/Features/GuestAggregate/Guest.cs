@@ -21,8 +21,7 @@ public sealed class Guest : AggregateRoot
     public string ProfilePictureUrl { get; }
     private readonly List<GuestRating> _ratings = new();
 
-    public Guest(Guid id, string name, string lastName, string profilePictureUrl, DateTime createdAt,
-        DateTime updatedAt) : base(id, createdAt, updatedAt)
+    public Guest(string name, string lastName, string profilePictureUrl)
     {
         Name = name;
         LastName = lastName;

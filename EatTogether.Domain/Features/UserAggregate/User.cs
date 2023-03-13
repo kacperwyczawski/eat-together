@@ -7,8 +7,7 @@ public sealed class User : AggregateRoot
     public string Email { get; }
     public string Password { get; } // TODO: Hash password
 
-    public User(Guid id, string firstName, string lastName, string email, string password, DateTime createdAt,
-        DateTime updatedAt) : base(id, createdAt, updatedAt)
+    public User(string firstName, string lastName, string email, string password)
     {
         FirstName = firstName;
         LastName = lastName;

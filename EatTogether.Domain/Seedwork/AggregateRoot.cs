@@ -2,10 +2,10 @@
 
 public class AggregateRoot : Entity
 {
-    protected AggregateRoot(Guid id, DateTime createdAt, DateTime updatedAt) : base(id)
+    protected AggregateRoot()
     {
-        CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
+        CreatedAt = DateTime.Now;
+        UpdatedAt = DateTime.Now;
     }
     
     public DateTime CreatedAt { get; }

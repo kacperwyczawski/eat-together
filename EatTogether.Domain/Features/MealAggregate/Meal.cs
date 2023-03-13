@@ -15,9 +15,8 @@ public class Meal : AggregateRoot
     public Price Price { get; }
     public string ImageUrl { get; }
 
-    public Meal(Guid id, string name, string description, DateTime start, DateTime end, int maxGuests,
-        Price price, string imageUrl, DateTime createdAt, DateTime updatedAt, Guid hostId, Guid menuId) : base(id,
-        createdAt, updatedAt)
+    public Meal(string name, string description, DateTime start, DateTime end, int maxGuests,
+        Price price, string imageUrl, Guid hostId, Guid menuId)
     {
         Name = name;
         Description = description;

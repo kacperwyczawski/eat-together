@@ -24,8 +24,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
         if (_userRepository.GetByEmail(command.Email) is not null)
             return Task.FromResult<ErrorOr<AuthenticationResult>>(Errors.User.DuplicateEmail);
 
-        var user = new User(Guid.NewGuid(), command.FirstName, command.LastName, command.Email, command.Password,
-            DateTime.Now, DateTime.Now);
+        var user = new User(command.FirstName, command.LastName, command.Email, command.Password);
 
         _userRepository.Add(user);
 

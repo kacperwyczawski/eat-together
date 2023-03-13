@@ -15,12 +15,12 @@ public sealed class Menu : AggregateRoot
 
     public string Description { get; }
 
-    public Rating AverageRating { get; }
+    public Rating? AverageRating { get; }
 
     private readonly List<MenuSection> _sections = new();
 
-    public Menu(Guid id, string name, string description, Rating averageRating, DateTime createdAt, DateTime updatedAt,
-        Guid hostId) : base(id, createdAt, updatedAt)
+    public Menu(string name, string description, Guid hostId,
+        Rating? averageRating = null)
     {
         Name = name;
         Description = description;

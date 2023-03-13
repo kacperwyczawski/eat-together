@@ -4,7 +4,7 @@ public abstract class Entity : IEquatable<Entity>
 {
     public Guid Id { get; protected set; }
 
-    protected Entity(Guid id) => Id = id;
+    protected Entity() => Id = Guid.NewGuid();
 
     public bool Equals(Entity? other) => Equals((object?)other);
 

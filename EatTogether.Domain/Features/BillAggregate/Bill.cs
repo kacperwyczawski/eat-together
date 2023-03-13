@@ -10,8 +10,7 @@ public sealed class Bill : AggregateRoot
 
     public Price Price { get; }
 
-    public Bill(Guid id, Price price, DateTime createdAt, DateTime updatedAt, Guid mealId, Guid guestId, Guid hostId)
-        : base(id, createdAt, updatedAt)
+    public Bill(Price price, Guid mealId, Guid guestId, Guid hostId)
     {
         Price = price;
         _mealId = mealId;

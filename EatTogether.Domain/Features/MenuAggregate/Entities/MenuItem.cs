@@ -5,7 +5,7 @@ public sealed class MenuItem : Entity
     public string Name { get; }
     public string Description { get; }
     
-    public MenuItem(Guid id, string name, string description) : base(id)
+    public MenuItem(string name, string description)
     {
         Name = name;
         Description = description;

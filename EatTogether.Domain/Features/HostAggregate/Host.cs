@@ -12,8 +12,7 @@ public sealed class Host : AggregateRoot
     public string LastName { get; }
     public string ProfilePictureUrl { get; }
 
-    public Host(Guid id, string firstName, string lastName, string profilePictureUrl, DateTime createdAt,
-        DateTime updatedAt, Guid userId) : base(id, createdAt, updatedAt)
+    public Host(string firstName, string lastName, string profilePictureUrl, Guid userId)
     {
         FirstName = firstName;
         LastName = lastName;

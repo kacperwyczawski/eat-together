@@ -6,7 +6,7 @@ public class GuestRating : Entity
 {
     public Rating Rating { get; }
     
-    public GuestRating(Guid id, Rating rating) : base(id)
+    public GuestRating(Rating rating)
     {
         Rating = rating;
     }
