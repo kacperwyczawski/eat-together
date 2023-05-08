@@ -1,5 +1,5 @@
 > **Warning**
-> This repository includes a partially completed project that contains incomplete code. However, some sections of the project may be useful, such as the jwt authentication implementation. Please note that the repository is kept only for reference purposes, and there are no plans to update it. As a result, I cannot assure its relevace or security.
+> This repository includes a partially finished project that contains incomplete code. However, some sections of the project may be useful, such as the jwt authentication implementation. Please note that the repository is kept only for reference purposes, and there are no plans to update it. As a result, I cannot assure its relevace or security.
 
 # Eat Together
 
